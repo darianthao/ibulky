@@ -1,0 +1,19 @@
+.InputSection{
+}
+.InputFieldsBox{
+    border: 5px solid black;
+    max-width: 400px;
+    margin-top: 30px;
+    padding: 40px;
+}
+
+.OtherInputFields {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 20px;
+}
+
+.genderField{
+    margin-top: 20px;
+    width: 200px;
+}
