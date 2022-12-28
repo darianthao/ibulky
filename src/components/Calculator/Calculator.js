@@ -5,15 +5,16 @@ import {Graph} from "./GraphSection/Graph";
 
 function Calculator() {
     return (
-        <>
         <div className="Calculator">
-            <Graph/>
-            <InputSection/>
+            <div className="grid-container">
+                <div className="grid-item">
+                    <Graph/>
+                </div>
+                <div className="grid-item">
+                    <InputSection/>
+                </div>
+            </div>
         </div>
-        <div className="Description">
-        This is where my output will be
-        </div>
-        </>
     );
 }
 
