@@ -1,5 +1,9 @@
 import './InputSection.css'
-import {InputLabel, MenuItem, Select, TextField, Button, FormControl} from "@mui/material";
+import {InputLabel,
+    MenuItem,
+    Select,
+    TextField,
+    Button, FormControl} from "@mui/material";
 
 function InputSection() {
     let gender;

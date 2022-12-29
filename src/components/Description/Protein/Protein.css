@@ -1,0 +1,27 @@
+.protein-context-container {
+    width: 100%;
+    position: relative;
+    background: #d0353a;
+    height: 600px;
+}
+
+.protein-context-container h1{
+    width: 800px;
+    font-size: 120px;
+    margin-left: 30px;
+    padding: 10px;
+    line-height: 1em;
+    font-family: sans-serif;
+}
+
+.protein-context-container h2{
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 1.25rem;
+    width: 607px;
+}
+
+.protein-context-container ul{
+    margin-left: 20px;
+    margin-top: 20px;
+}

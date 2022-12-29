@@ -1,6 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
 .Calculator{
-    background-color: #2d2828;
-    color: #4b4b4b;
+    border: 25px solid #4e54c8;
+    background: #ffffff;
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    color: #fdfafa;
     height: 800px;
 }
 
