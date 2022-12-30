@@ -1,0 +1,32 @@
+.fats-context-container{
+    width: 100%;
+    position: relative;
+    background: #d0353a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 4em;
+}
+
+.fats-description{
+    margin-left: 10em;
+}
+
+.fats-description h1{
+    width: 1200px;
+    font-size: 100px;
+    padding: 10px;
+    line-height: 1em;
+    font-family: sans-serif;
+}
+
+.fats-description p{
+    padding: 10px;
+    font-size: 1.25rem;
+    width: 1000px;
+    letter-spacing: -0.01em;
+}
+
+.fat-list{
+    font-size: 1.5rem;
+}
