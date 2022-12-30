@@ -3,22 +3,42 @@
     position: relative;
     background: #d0353a;
     height: 600px;
+    display: flex;
+    flex-direction: row;
+}
+
+.carbohydrates-description {
+    text-align: right;
+    margin-left: 10em;
 }
 
 .carbohydrates-context-container h1 {
     width: 800px;
     font-size: 6em;
-    margin-left: 30px;
     padding: 10px;
     line-height: .9em;
     font-family: sans-serif;
 }
 
-.carbohydrates-description {
-    text-align: right;
-    margin-left: 55%;
+.carbohydrates-description p {
+    font-size: 1.25rem;
+    width: 750px;
+    margin-left: 3em;
 }
 
-.carbohydrates-description p {
-    margin-right: 30px;
+.carbohydrates-images {
+    display: flex;
+}
+.carbohydrates-images img{
+    width: 400px;
+    height: 400px;
+    margin-left: 10%;
+}
+
+.boltLogo {
+    transform: rotate(25deg);
+}
+
+.breadLogo {
+    transform: rotate(-25deg);
 }
