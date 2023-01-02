@@ -36,9 +36,8 @@
 }
 
 .boltLogo {
-    transform: rotate(25deg);
+    transform: rotate(15deg);
 }
 
 .breadLogo {
-    transform: rotate(-25deg);
 }

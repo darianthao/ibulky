@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "group": "Fruit"
+  },
+  {
+    "id": 2,
+    "name": "Rice",
+    "group": "Grain"
+  },
+  {
+    "id": 3,
+    "name": "Peanut-Butter",
+    "group": "Spreads"
+  },
+  {
+    "id": 4,
+    "name": "Banana",
+    "group": "Fruit"
+  },
+  {
+    "id": 5,
+    "name": "Chicken Breast",
+    "group": "Meat"
+  },
+  {
+    "id": 6,
+    "name": "Ground Beef",
+    "group": "Meat"
+  },
+  {
+    "id": 7,
+    "name": "French Bread",
+    "group": "Grain"
+  }
+]

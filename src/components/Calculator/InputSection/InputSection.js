@@ -13,25 +13,24 @@ function InputSection() {
     }
 
     return (
-        <div className="InputSection">
-
-            <div className="InputFieldsBox">
-            <div className="genderField">
-                <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label" color="secondary">Gender</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-label"
-                        id="demo-simple-select"
-                        color="secondary"
-                        value={gender}
-                        label="Gender"
-                        onChange={handleChange}
-                    >
-                        <MenuItem value={"Male"}>Male</MenuItem>
-                        <MenuItem value={"Female"}>Female</MenuItem>
-                    </Select>
-                </FormControl>
-            </div>
+        <>
+            <div className="input-container">
+                <div className="genderField">
+                    <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label" color="secondary">Gender</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            color="secondary"
+                            value={gender}
+                            label="Gender"
+                            onChange={handleChange}
+                        >
+                            <MenuItem value={"Male"}>Male</MenuItem>
+                            <MenuItem value={"Female"}>Female</MenuItem>
+                        </Select>
+                    </FormControl>
+                </div>
             <div className="OtherInputFields">
                 <TextField label="Age"
                            color="secondary"
@@ -45,7 +44,7 @@ function InputSection() {
                 <Button variant="outlined" color="secondary">Calculate</Button>
             </div>
             </div>
-        </div>
+        </>
     );
 }
 

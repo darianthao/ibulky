@@ -5,7 +5,6 @@
 
 .Calculator{
     border: 25px solid #4e54c8;
-    background: #ffffff;
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
     color: #fdfafa;
     height: 800px;

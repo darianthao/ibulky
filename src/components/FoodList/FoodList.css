@@ -1,0 +1,16 @@
+.foodlist-container{
+    width: 100%;
+    position: relative;
+    background: #4E54C8;
+    align-items: center;
+    padding-bottom: 4em;
+}
+
+.foodlist-main-header{
+    font-size: 100px;
+    margin-left: 1.5em;
+}
+
+.food-item-listing {
+    margin-left: 10em;
+}
