@@ -28,15 +28,13 @@ function Calculator() {
     const [macro, setMacro] = useState(macroCount);
     
     return (
-        <div className="Calculator">
-            <div className="grid-container">
-                <div className="grid-item">
+        <div className="calculator-container">
+                <div className="graph-component">
                     <Graph results={results} input={input} setResults={setResults} setInput={setInput} macro={macro} setMacro={setMacro}/>
                 </div>
-                <div className="grid-item">
+                <div className="input-component">
                     <InputSection results={results} input={input} setResults={setResults} setInput={setInput} macro={macro} setMacro={setMacro}/>
                 </div>
-            </div>
         </div>
     );
 }

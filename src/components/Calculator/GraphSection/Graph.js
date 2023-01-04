@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import FoodData from "../../../data/food.json";
+import './Graph.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -11,6 +12,10 @@ function Graph(props) {
     const {results, setResults, input, setInput, macro, setMacro} = props
 
     const data = {
+        title: {
+            display: true,
+            text: 'Chart.js Doughnut Chart'
+        },
         labels: ['Protein', 'Carbohydrates', 'Fats'],
         datasets: [
             {
@@ -28,16 +33,28 @@ function Graph(props) {
                 ],
                 borderWidth: 1,
             },
-        ],
+        ]
+    };
+
+    const redraw = {
+        boolean: true
     };
 
     return (
-        <div style={{height: "60vh",
-            width: "60vh",
-            position: "relative",
-            marginBottom: "1%",
-            padding: "1%"}}>
-            <Pie data={data}/>
+        <div className="graph-container">
+            <Doughnut data={data} redraw={redraw} options={{
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: "blue",
+                            font: {
+                                size: 18,
+                                family: 'Exo'
+                            }
+                        }
+                    }
+                }
+            }}/>
         </div>
     );
 }

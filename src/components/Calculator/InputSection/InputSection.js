@@ -21,10 +21,19 @@ function InputSection(props) {
     const getBMR = (e) => {
         e.preventDefault();
 
-        if (input.weight > 500) {
+        // Check to see if any empty input fields
+        if(input.weight == "" || input.height == "" || input.age == "" || input.gender == ""){
+            setErrorMessage("Please fill in all the fields.")
+            setResults({bmr: ""})
+            setMacro({carbohydrates: "", proteins: "", fats: ""})
+        }
+        // check to see if weight is over 500 lbs.
+        else if (input.weight > 500) {
             setErrorMessage("Please enter a number less than 500lbs!")
             setResults({bmr: ""})
-        } else {
+        }
+        // fetch to api to grab BMR data
+        else {
 
         let convertedWeight = input.weight * 0.45359237;
 
@@ -65,17 +74,16 @@ function InputSection(props) {
                         <div className="input-container">
                             <form className="input-form" onSubmit={getBMR}>
                                 <label>
-                                    Weight:
-                                    <input type="number" name="weight" value={input.weight} onChange={changeHandler}/>
-                                    lbs.
+                                    Weight In Pounds:
+                                    <input type="number" name="weight" value={input.weight} onChange={changeHandler} placeholder="Weight"/>
                                 </label>
                                 <label>
-                                    Height:
-                                    <input type="number" name="height" value={input.height} onChange={changeHandler}/>
+                                    Height In Centimeters:
+                                    <input type="number" name="height" value={input.height} onChange={changeHandler} placeholder="Height"/>
                                 </label>
                                 <label>
                                     Age:
-                                    <input type="number" name="age" value={input.age} onChange={changeHandler}/>
+                                    <input type="number" name="age" value={input.age} onChange={changeHandler} placeholder="Age"/>
                                 </label>
                                 <label>
                                     Gender:

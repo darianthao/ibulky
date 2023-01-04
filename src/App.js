@@ -8,7 +8,6 @@ function App() {
         <div>
             <Hero/>
             <Description/>
-            <FoodList/>
             <Calculator/>
         </div>
   );
