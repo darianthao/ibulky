@@ -48,11 +48,11 @@ function InputSection(props) {
         fetch(`https://mega-fitness-calculator1.p.rapidapi.com/bmr?weight=${convertedWeight}&height=${input.height}&age=${input.age}&gender=${input.gender}`, options)
             .then(response => response.json())
             .then(BMRJson => {
-                console.log(BMRJson)
+                console.log(Math.floor(BMRJson.info.bmr));
                 setResults(
                     {
                         ...results,
-                        bmr: BMRJson.info.bmr
+                        bmr: Math.floor(BMRJson.info.bmr)
                     }
                 )
                 setErrorMessage("")
@@ -72,29 +72,39 @@ function InputSection(props) {
                 return (
                     <>
                         <div className="input-container">
-                            <form className="input-form" onSubmit={getBMR}>
-                                <label>
-                                    Weight In Pounds:
-                                    <input type="number" name="weight" value={input.weight} onChange={changeHandler} placeholder="Weight"/>
-                                </label>
+                            <h2>Calculate Your Macros</h2>
+                            <form onSubmit={getBMR}>
+                                <div className="entry-box">
+                                    <label>
+                                        Weight In Pounds:
+                                        <input type="number" name="weight" value={input.weight} onChange={changeHandler} placeholder="Weight"/>
+                                    </label>
+                                </div>
+                                <div className="entry-box">
                                 <label>
                                     Height In Centimeters:
                                     <input type="number" name="height" value={input.height} onChange={changeHandler} placeholder="Height"/>
                                 </label>
+                                </div>
+                                <div className="entry-box">
                                 <label>
                                     Age:
                                     <input type="number" name="age" value={input.age} onChange={changeHandler} placeholder="Age"/>
                                 </label>
+                                    </div>
+                                    <div className="entry-box">
                                 <label>
                                     Gender:
                                     <input type="text" name="gender" value={input.gender} onChange={changeHandler}/>
                                 </label>
-                                <input type="submit" value="Submit"/>
+                                    </div>
+
+                                <input type="submit" value="Submit" className="submit-button"/>
                             </form>
                             <p>{errorMessage}</p>
                             <div className="getBMRButton">
                                 <h1>Results:</h1>
-                                <h1>{results.bmr}</h1>
+                                <h1>{results.bmr} Calories</h1>
                             </div>
                         </div>
                     </>

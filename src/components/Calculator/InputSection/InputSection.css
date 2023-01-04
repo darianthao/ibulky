@@ -4,7 +4,56 @@
     margin-top: 30px;
     padding: 40px;
     color: #fdfafa;
+    position: absolute;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
 }
+.input-container h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.entry-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+.submit-button{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ffffff;
+    background: #6083ef;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    border-radius: 8px;
+    border: 0;
+}
+
+.submit-button:hover{
+    background: #6083ef;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #6083ef,
+    0 0 25px #6083ef,
+    0 0 50px #6083ef,
+    0 0 100px #6083ef;
+}
+
 .input-form{
     display: flex;
     flex-direction: column;
