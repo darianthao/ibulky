@@ -2,35 +2,31 @@ import './InputSection.css'
 
 import {useState} from "react";
 
-const initalResults = {
-    bmr: ""
-}
+function InputSection(props) {
 
-const initalInput = {
-    weight: "",
-    height: "",
-    age: "",
-    gender: ""
-}
+    const {results, setResults, input, setInput, macro, setMacro} = props
+    const [errorMessage, setErrorMessage] = useState("");
 
-function InputSection() {
-
-    const [results, setResults] = useState(initalResults);
-    const [input, setInput] = useState(initalInput);
 
     const changeHandler = (e) => {
         e.persist();
+
         setInput({
             ...input,
             [e.target.name]: e.target.value,
         });
+
     };
 
     const getBMR = (e) => {
         e.preventDefault();
 
+        if (input.weight > 500) {
+            setErrorMessage("Please enter a number less than 500lbs!")
+            setResults({bmr: ""})
+        } else {
+
         let convertedWeight = input.weight * 0.45359237;
-        let convertedHeight = 0;
 
         const options = {
             method: 'GET',
@@ -45,12 +41,23 @@ function InputSection() {
             .then(BMRJson => {
                 console.log(BMRJson)
                 setResults(
-                    {...results,
-                    bmr: BMRJson.info.bmr
+                    {
+                        ...results,
+                        bmr: BMRJson.info.bmr
+                    }
+                )
+                setErrorMessage("")
+                setMacro(
+                    {
+                        ...macro,
+                        proteins: results.bmr * .3 / 4,
+                        carbohydrates: results.bmr * .4 / 4,
+                        fats: results.bmr * .3 / 9
                     }
                 )
             })
             .catch(err => console.error(err));
+    }
     };
 
                 return (
@@ -64,11 +71,11 @@ function InputSection() {
                                 </label>
                                 <label>
                                     Height:
-                                    <input type="text" name="height" value={input.height} onChange={changeHandler}/>
+                                    <input type="number" name="height" value={input.height} onChange={changeHandler}/>
                                 </label>
                                 <label>
                                     Age:
-                                    <input type="text" name="age" value={input.age} onChange={changeHandler}/>
+                                    <input type="number" name="age" value={input.age} onChange={changeHandler}/>
                                 </label>
                                 <label>
                                     Gender:
@@ -76,6 +83,7 @@ function InputSection() {
                                 </label>
                                 <input type="submit" value="Submit"/>
                             </form>
+                            <p>{errorMessage}</p>
                             <div className="getBMRButton">
                                 <h1>Results:</h1>
                                 <h1>{results.bmr}</h1>
