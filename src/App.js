@@ -9,6 +9,7 @@ function App() {
             <Hero/>
             <Description/>
             <FoodList/>
+            <Calculator/>
         </div>
   );
 }

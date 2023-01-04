@@ -3,6 +3,11 @@
     max-width: 400px;
     margin-top: 30px;
     padding: 40px;
+    color: blue;
+}
+.input-form{
+    display: flex;
+    flex-direction: column;
 }
 
 .OtherInputFields {
