@@ -20,7 +20,7 @@ function Graph(props) {
         datasets: [
             {
                 label: '# of Votes',
-                data: [macro.carbohydrates, macro.proteins, macro.fats],
+                data: [macro.proteins, macro.carbohydrates, macro.fats],
                 backgroundColor: [
                     'rgba(255, 99, 132)',
                     'rgba(54, 162, 235)',

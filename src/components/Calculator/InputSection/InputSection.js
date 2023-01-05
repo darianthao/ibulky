@@ -1,4 +1,5 @@
 import './InputSection.css'
+import {fetchBMR} from '../../../fetchCalls/index'
 
 import {useState} from "react";
 
@@ -22,7 +23,7 @@ function InputSection(props) {
         e.preventDefault();
 
         // Check to see if any empty input fields
-        if(input.weight == "" || input.height == "" || input.age == "" || input.gender == ""){
+        if(input.weight === "" || input.height === "" || input.age === "" || input.gender === ""){
             setErrorMessage("Please fill in all the fields.")
             setResults({bmr: ""})
             setMacro({carbohydrates: "", proteins: "", fats: ""})
@@ -37,16 +38,7 @@ function InputSection(props) {
 
         let convertedWeight = input.weight * 0.45359237;
 
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '3003482a04msh1f5f62e281cc75cp159084jsn979b928ab4c9',
-                'X-RapidAPI-Host': 'mega-fitness-calculator1.p.rapidapi.com'
-            }
-        };
-
-        fetch(`https://mega-fitness-calculator1.p.rapidapi.com/bmr?weight=${convertedWeight}&height=${input.height}&age=${input.age}&gender=${input.gender}`, options)
-            .then(response => response.json())
+            fetchBMR(convertedWeight, input.height, input.age, input.gender)
             .then(BMRJson => {
                 console.log(Math.floor(BMRJson.info.bmr));
                 setResults(
@@ -59,9 +51,9 @@ function InputSection(props) {
                 setMacro(
                     {
                         ...macro,
-                        proteins: results.bmr * .3 / 4,
-                        carbohydrates: results.bmr * .4 / 4,
-                        fats: results.bmr * .3 / 9
+                        proteins: Math.floor(BMRJson.info.bmr * .3 / 4),
+                        carbohydrates: Math.floor(BMRJson.info.bmr * .4 / 4),
+                        fats: Math.floor(BMRJson.info.bmr * .3 / 9)
                     }
                 )
             })
@@ -104,7 +96,7 @@ function InputSection(props) {
                             <p>{errorMessage}</p>
                             <div className="getBMRButton">
                                 <h1>Results:</h1>
-                                <h1>{results.bmr} Calories</h1>
+                                {results.bmr === "" ? <h1></h1> : <h1>{results.bmr} Calories</h1>}
                             </div>
                         </div>
                     </>
