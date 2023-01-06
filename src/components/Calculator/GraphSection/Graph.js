@@ -37,12 +37,12 @@ function Graph(props) {
     };
 
     const redraw = {
-        boolean: true
+        boolean: false
     };
 
     return (
         <div className="graph-container">
-            <Doughnut data={data} redraw={redraw} options={{
+            <Doughnut data={data} options={{
                 plugins: {
                     legend: {
                         labels: {

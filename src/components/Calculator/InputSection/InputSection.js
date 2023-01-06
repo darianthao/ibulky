@@ -3,6 +3,7 @@ import {fetchBMR} from '../../../fetchCalls/index'
 
 import {useState} from "react";
 
+
 function InputSection(props) {
 
     const {results, setResults, input, setInput, macro, setMacro} = props
@@ -84,15 +85,17 @@ function InputSection(props) {
                                     <input type="number" name="age" value={input.age} onChange={changeHandler} placeholder="Age"/>
                                 </label>
                                     </div>
-                                    <div className="entry-box">
-                                <label>
-                                    Gender:
-                                    <input type="text" name="gender" value={input.gender} onChange={changeHandler}/>
-                                </label>
+                                <div className="radio-entry-box">
+                                        <input type="radio" id="maleButton" name="gender" value="male" onChange={changeHandler}/>
+                                            <label htmlFor="maleButton">Male</label>
+                                        <input type="radio" id="femaleButton" name="gender" value="female" onChange={changeHandler}/>
+                                            <label htmlFor="femaleButton">Female</label>
                                     </div>
 
                                 <input type="submit" value="Submit" className="submit-button"/>
                             </form>
+
+
                             <p>{errorMessage}</p>
                             <div className="getBMRButton">
                                 <h1>Results:</h1>
